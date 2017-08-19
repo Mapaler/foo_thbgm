@@ -1,4 +1,4 @@
-#include "SDK/foobar2000.h"
+﻿#include "SDK/foobar2000.h"
 #include "helpers/helpers.h"
 #include <map>
 #include <string>
@@ -72,19 +72,19 @@ public:
 	void get_name(t_uint32 p_index, pfc::string_base &p_out) {
 		switch(p_index) {
 			case loop_forever:
-				p_out = "ThBGM Loop Forever";
+				p_out = "\xE4\xB8\x9C\xE6\x96\xB9\BGM \xE6\x97\xA0\xE9\x99\x90\xE5\xBE\xAA\xE7\x8E\xAF";
 				break;
 			case loop_count: 
-				p_out = "ThBGM LoopX";
+				p_out = "\xE4\xB8\x9C\xE6\x96\xB9\BGM \xE5\xBE\xAA\xE7\x8E\xAF\xC3\x97";
 				char counts[12];
 				_itoa_s(loopcount, counts, 10);
 				p_out.add_string(counts);
 				break;
 			case thbgm_readinfo:
-				p_out = "ThBGM Read Metadata";
+				p_out = "\xE4\xB8\x9C\xE6\x96\xB9\BGM \xE8\xAF\xBB\xE5\x8F\x96\xE5\x85\x83\xE6\x95\xB0";
 				break;
 			case thbgm_dump:
-				p_out = "ThBGM Extract Files";
+				p_out = "\xE4\xB8\x9C\xE6\x96\xB9\BGM \xE6\x8F\x90\xE5\x8F\x96\xE6\x96\x87\xE4\xBB\xB6";
 				break;
 		}
 	}
@@ -92,16 +92,16 @@ public:
 	bool get_description(t_uint32 p_index, pfc::string_base &p_out) {
 		switch(p_index) {
 			case loop_forever:
-				p_out = "infinity loop mode";
+				p_out = "\xE6\x97\xA0\xE9\x99\x90\xE5\xBE\xAA\xE7\x8E\xAF\xE6\xA8\xA1\xE5\xBC\x8F";
 				return true;
 			case loop_count:
-				p_out = "specify loop count";
+				p_out = "\xE6\x8C\x87\xE5\xAE\x9A\xE5\xBE\xAA\xE7\x8E\xAF\xE6\xAC\xA1\xE6\x95\xB0";
 				return true;
 			case thbgm_readinfo:
-				p_out = "read bgm's metadata from original file";
+				p_out = "\xE4\xBB\x8E\xE5\x8E\x9F\xE5\xA7\x8B\xE6\x96\x87\xE4\xBB\xB6\xE4\xB8\xAD\xE8\xAF\xBB\xE5\x8F\x96\BGM\xE7\x9A\x84\xE5\x85\x83\xE6\x95\xB0\xE6\x8D\xAE";
 				return true;
 			case thbgm_dump:
-				p_out = "extract bgm files under current directory";
+				p_out = "\xE6\x8F\x90\xE5\x8F\x96\BGM\xE6\x96\x87\xE4\xBB\xB6\xE5\x88\xB0\xE5\xBD\x93\xE5\x89\x8D\xE6\x96\x87\xE4\xBB\xB6\xE5\xA4\xB9";
 				return true;
 		}
 	}
@@ -136,7 +136,7 @@ public:
 				break;
 			case loop_count:
 				loopforever = false;
-				loopcount = atoi(_InputBox("Please specify loop counts"));
+				loopcount = atoi(_InputBox("请输入循环次数"));
 				if (!loopcount || loopcount == 0) loopcount = 1;
 				if (loopcount > 65535 || loopcount < 0) loopcount = 65535;
 				break;

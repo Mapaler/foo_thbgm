@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UTF-8编码</title>
+<style type="text/css">
+	textarea
+	{
+		width: 300px;
+		height: 100px;
+	}
+</style>
+</head>
+
+<body>
+	<div><lable>输入<br><textarea id="input"></textarea></lable></div>
+	<div><lable>输出<br><textarea id="output"></textarea></lable></div>
+<script type="text/javascript">
+	var ipt = document.querySelector("#input");
+	var opt = document.querySelector("#output");
+	ipt.onkeyup=encode;
+	ipt.onchange=encode;
+	function encode()
+	{
+		var str = encodeURI(ipt.value);
+		str = str.replace(/%20/igm," "); //还原空格
+		str = str.replace(/%0A/igm,"\\n"); //替换换行
+		str = str.replace(/(%\w{2})(\w+)/igm,"$1\\$2"); //给转义符后跟英文字符前加\
+		str = str.replace(/%/igm,"\\x"); //将%替换为\x
+		opt.value = str;
+	}
+</script>
+</body>
+</html>
