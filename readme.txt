@@ -37,16 +37,17 @@ Scarlet Weather Rhapsody (東方緋想天)
 Hisoutensoku (東方非想天則～超弩級ギニョルの謎を追え)
 Hopeless Masquerade (東方心綺楼)
 Urban Legend in Limbo (東方深秘録)
+Hidden Star in Four Seasons (東方天空璋)
+Antinomy of Common Flowers (東方憑依華)
 Impossible Spell Card (弾幕アマノジャク)
 Uwabami Breakers (黄昏酒場)
 Kioh Gyoku (稀翁玉)
 Banshiryuu (幡紫竜) both c67 and later version
 Samidare (五月雨)
-Hidden Star in Four Seasons (天空璋)
 
 ChangeLog:
 2.0
-update tfpk unpacker for 深秘録 & 心綺楼's hidden music
+update tfpk unpacker
 1.2
 add tfpk unpacker for 心綺楼
 raw stream dump support
